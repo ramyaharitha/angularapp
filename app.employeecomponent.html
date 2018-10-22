@@ -1,0 +1,47 @@
+<html>
+<head>
+</head>
+<body>
+
+<pre>
+<h3> Add Employee </h3>
+ID         :<input [(ngModel)]='id' />
+Name       :<input [(ngModel)]='name' />
+Salary     :<input [(ngModel)]='salary' />
+Department :<input [(ngModel)]='dept' />
+<button (click)='addData()' >Insert Data</button>
+</pre>
+<table id="myTable" border="1px">
+	<tr>
+			<th><a href="#" (click)="sortid()">ID</a></th>
+			<th><a href="#" (click)="sortname()">Name</a></th>
+			<th><a href="#" (click)="sortsalary()">Salary</a></th>
+			<th><a href="#" (click)="sortdept()">Department</a></th>
+			<th colspan='2'>Action</th>
+			
+	</tr>
+	<tr *ngFor='let e of emp'>
+		<td>{{e.empId}}</td>
+		<td>{{e.empName}}</td>
+		<td>{{e.empSalary}}</td>
+		<td>{{e.empDept}}</td>
+		<td><button (click)="putData(e)" id="updateBtn" >update</button></td>
+		<td><button name="deleteBtn" (click)="deleteData(e)">delete</button></td>
+	</tr>
+</table>
+<script>
+</script>
+<div id="div">
+<pre>
+
+<h3>Update Employee </h3>
+ID         :<input disabled [(ngModel)]='id2' /> 
+Name       :<input [(ngModel)]='name2'  />
+Salary     :<input [(ngModel)]='salary2' />
+Department :<input [(ngModel)]='dept2' />
+<button (click)='updateData()' >Update Data</button>
+</pre>
+</div>
+
+</body>
+</html>
